@@ -143,6 +143,15 @@ button {
     background-color: #555;
 }
 
+#cancel-budget-btn {
+    background-color: #e5e5e5;
+    color: #333;
+}
+
+#cancel-budget-btn:hover {
+    background-color: #d5d5d5;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -213,6 +222,45 @@ th {
     background-color: #d5d5d5;
 }
 
+#add-category-btn {
+    margin-top: 8px;
+    padding: 7px 12px;
+    background-color: #e5e5e5;
+    color: #333;
+    font-size: 13px;
+}
+
+#add-category-btn:hover {
+    background-color: #d5d5d5;
+}
+
+#category-form-section {
+    grid-column: 1 / -1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+#save-category-btn {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+}
+
+#save-category-btn:hover {
+    background-color: #555;
+}
+
+#cancel-category-btn {
+    background-color: #e5e5e5;
+    color: #333;
+}
+
+#cancel-category-btn:hover {
+    background-color: #d5d5d5;
+}
+
 .action-buttons {
     display: flex;
     gap: 8px;
@@ -236,6 +284,39 @@ th {
 
 .delete-btn:hover {
     background-color: #555;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #e5e5e5;
+    color: #333;
+}
+
+.pagination button:hover {
+    background-color: #d5d5d5;
+}
+
+.pagination-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.pagination-numbers button {
+    min-width: 38px;
+}
+
+.pagination-numbers button.active {
+    background-color: #333;
+    color: white;
 }
 
 @media (max-width: 600px) {
@@ -271,5 +352,9 @@ th {
 
     .action-buttons {
         flex-direction: column;
+    }
+
+    #category-form-section {
+        grid-column: auto;
     }
 }
