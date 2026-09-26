@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Personal Finance App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+        <h1>Personal Finance App</h1>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="budget.html">Budget</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Transactions Header -->
+        <section>
+            <h2>Transactions</h2>
+            <p>
+                Manage your income and expenses.
+            </p>
+        </section>
+
+        <!-- Add / Edit Transaction -->
+        <section>
+            <h2>Add Transaction</h2>
+
+            <form id="transaction-form">
+
+                <div class="form-group">
+                    <label for="transaction-type">
+                        Type
+                    </label>
+
+                    <select id="transaction-type" required>
+                        <option value="">Select type</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="transaction-amount">
+                        Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="transaction-amount"
+                        placeholder="Enter amount"
+                        min="0"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="transaction-category">
+                        Category
+                    </label>
+
+                    <select id="transaction-category" required>
+                        <option value="">Select category</option>
+                    </select>
+                </div>
+
+                <!-- Add New Category -->
+                <div class="category-form">
+                    <button
+                        type="button"
+                        id="show-category-form"
+                    >
+                        + Add New Category
+                    </button>
+
+                    <div id="category-input-container" hidden>
+
+                        <div class="form-group">
+                            <label for="new-category">
+                                New Category
+                            </label>
+
+                            <input
+                                type="text"
+                                id="new-category"
+                                placeholder="Enter category name"
+                            >
+                        </div>
+
+                        <button
+                            type="button"
+                            id="save-category"
+                        >
+                            Save Category
+                        </button>
+
+                        <button
+                            type="button"
+                            id="cancel-category"
+                        >
+                            Cancel
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="transaction-description">
+                        Description
+                    </label>
+
+                    <input
+                        type="text"
+                        id="transaction-description"
+                        placeholder="Enter description"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="transaction-date">
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="transaction-date"
+                        required
+                    >
+                </div>
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        id="transaction-submit"
+                    >
+                        Add Transaction
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancel-edit"
+                        hidden
+                    >
+                        Cancel Edit
+                    </button>
+
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Transaction History -->
+        <section>
+            <h2>Transaction History</h2>
+
+            <!-- Search -->
+            <div class="form-group">
+                <label for="transaction-search">
+                    Search Transactions
+                </label>
+
+                <input
+                    type="text"
+                    id="transaction-search"
+                    placeholder="Search by description, category, or type"
+                >
+            </div>
+
+            <!-- Filters -->
+            <div class="filter-container">
+
+                <div class="form-group">
+                    <label for="filter-type">
+                        Filter by Type
+                    </label>
+
+                    <select id="filter-type">
+                        <option value="">All Types</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="filter-category">
+                        Filter by Category
+                    </label>
+
+                    <select id="filter-category">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <!-- Sorting -->
+            <div class="form-group">
+                <label for="transaction-sort">
+                    Sort Transactions
+                </label>
+
+                <select id="transaction-sort">
+                    <option value="newest">
+                        Newest to Oldest
+                    </option>
+
+                    <option value="oldest">
+                        Oldest to Newest
+                    </option>
+
+                    <option value="highest">
+                        Highest Amount
+                    </option>
+
+                    <option value="lowest">
+                        Lowest Amount
+                    </option>
+                </select>
+            </div>
+
+            <!-- Transaction Table -->
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="transaction-table-body">
+                        <!-- Transactions will be displayed here -->
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- Pagination -->
+            <div
+                id="pagination"
+                class="pagination"
+            >
+                <!-- Pagination buttons will be displayed here -->
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

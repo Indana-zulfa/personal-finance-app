@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Personal Finance App</title>
+    <title>Budget - Personal Finance App</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- Header and Navigation -->
     <header>
         <h1>Personal Finance App</h1>
 
@@ -21,52 +22,66 @@
 
     <main>
 
-        <!-- Dashboard Header -->
+        <!-- Budget Header -->
         <section>
-            <h2>Financial Dashboard</h2>
+            <h2>Budget Management</h2>
             <p>
-                Get a quick overview of your financial condition.
+                Set and monitor your monthly spending budget.
             </p>
         </section>
 
-        <!-- Financial Summary -->
+        <!-- Set Budget -->
         <section>
-            <h2>Financial Summary</h2>
+            <h2>Set Budget</h2>
 
-            <div class="form-group">
-                <label for="summary-month">
-                    Select Month
-                </label>
+            <form id="budget-form">
 
-                <select id="summary-month">
-                    <option value="">Select month</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="budget-month">
+                        Select Month
+                    </label>
 
-            <div class="summary-cards">
-
-                <div class="summary-card">
-                    <h3>Total Income</h3>
-                    <p id="total-income">
-                        Rp 0
-                    </p>
+                    <input
+                        type="month"
+                        id="budget-month"
+                        required
+                    >
                 </div>
 
-                <div class="summary-card">
-                    <h3>Total Expense</h3>
-                    <p id="total-expense">
-                        Rp 0
-                    </p>
+                <div class="form-group">
+                    <label for="budget-amount">
+                        Budget Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="budget-amount"
+                        placeholder="Enter budget amount"
+                        min="0"
+                        required
+                    >
                 </div>
 
-                <div class="summary-card">
-                    <h3>Balance</h3>
-                    <p id="balance">
-                        Rp 0
-                    </p>
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        id="budget-submit"
+                    >
+                        Set Budget
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancel-budget"
+                        hidden
+                    >
+                        Cancel
+                    </button>
+
                 </div>
 
-            </div>
+            </form>
         </section>
 
         <!-- Budget Overview -->
@@ -109,6 +124,7 @@
             </div>
 
             <div class="progress-container">
+
                 <div class="progress-bar">
                     <div
                         id="budget-progress"
@@ -119,38 +135,12 @@
                 <p id="budget-progress-text">
                     0% used
                 </p>
-            </div>
-        </section>
-
-        <!-- Recent Transactions -->
-        <section>
-            <h2>Recent Transactions</h2>
-
-            <div class="table-container">
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Description</th>
-                            <th>Category</th>
-                            <th>Type</th>
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
-
-                    <tbody id="transaction-table-body">
-                        <!-- Transactions will be displayed here -->
-                    </tbody>
-                </table>
 
             </div>
+
         </section>
 
     </main>
-
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Main JavaScript -->
     <script src="js/script.js"></script>

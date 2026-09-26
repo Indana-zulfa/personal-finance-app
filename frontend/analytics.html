@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Personal Finance App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Personal Finance App</h1>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="budget.html">Budget</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Analytics Header -->
+        <section>
+            <h2>Financial Analytics</h2>
+            <p>
+                Analyze your income and expenses to better understand your
+                financial habits.
+            </p>
+        </section>
+
+        <!-- Month Selector -->
+        <section>
+            <h2>Analysis Period</h2>
+
+            <div class="form-group">
+                <label for="expense-chart-month">
+                    Select Month
+                </label>
+
+                <select id="expense-chart-month">
+                    <option value="">Select month</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Financial Overview -->
+        <section>
+            <h2>Financial Overview</h2>
+
+            <div class="summary-cards">
+
+                <div class="summary-card">
+                    <h3>Total Income</h3>
+                    <p id="analytics-total-income">
+                        Rp 0
+                    </p>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Total Expense</h3>
+                    <p id="analytics-total-expense">
+                        Rp 0
+                    </p>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Net Balance</h3>
+                    <p id="analytics-net-balance">
+                        Rp 0
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Expense by Category -->
+        <section>
+            <h2>Expense by Category</h2>
+
+            <p>
+                See how your expenses are distributed across different
+                categories.
+            </p>
+
+            <div class="chart-container">
+                <canvas id="expense-chart"></canvas>
+            </div>
+        </section>
+
+        <!-- Expense Comparison -->
+        <section>
+            <h2>Expense Comparison</h2>
+
+            <p>
+                Compare your spending across different expense categories.
+            </p>
+
+            <div class="chart-container">
+                <canvas id="expense-comparison-chart"></canvas>
+            </div>
+        </section>
+
+        <!-- Financial Insights -->
+        <section>
+            <h2>Financial Insights</h2>
+
+            <div id="financial-insights">
+                <p>
+                    Select a month to view your financial insights.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
